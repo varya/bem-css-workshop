@@ -12,7 +12,7 @@ docpadConfig = {
         site:
 
             styles: [
-                '/libs/shower-bright/styles/screen.css'
+                '/libs/shower-sc5/styles/screen.css'
             ]
 
             scripts: [

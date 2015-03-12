@@ -1,0 +1,32 @@
+{
+  "name": "shower-ribbon",
+  "license": "MIT",
+  "main": "styles/screen.css",
+  "ignore": [
+    "*",
+    "!fonts/**",
+    "!images/**",
+    "!pictures/**",
+    "!styles/screen.css",
+    "!index.html",
+    "!License.md",
+    "!Readme.md",
+    "!bower.json"
+  ],
+  "keywords": [
+    "shower",
+    "presentation",
+    "ribbon",
+    "theme"
+  ],
+  "homepage": "https://github.com/varya/shower-sc5",
+  "_release": "d6355b79ea",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d6355b79ea0b33d4f584c347b7c3be6f422622d0"
+  },
+  "_source": "git://github.com/varya/shower-sc5.git",
+  "_target": "*",
+  "_originalSource": "git://github.com/varya/shower-sc5.git"
+}

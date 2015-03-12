@@ -3,4 +3,4 @@
 	url = https://github.com/varya/shower-sc5.git
 [submodule "libs/shower-core"]
 	path = libs/shower-core
-	url = https://github.com/shower/core§.git
+	url = https://github.com/shower/core.git

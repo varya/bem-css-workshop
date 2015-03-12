@@ -13,7 +13,7 @@
     "tests"
   ],
   "dependencies": {
-    "shower-sc5": "git://github.com:varya/shower-sc5.git",
+    "shower-sc5": "git://github.com/varya/shower-sc5.git",
     "shower-core": "~1.0.7"
   }
 }

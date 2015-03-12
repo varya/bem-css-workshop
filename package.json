@@ -1,20 +1,15 @@
 {
-  "name": "docpadder",
-  "version": "0.0.01",
-  "description": "Docpad engine for Shower",
+  "name": "bem-css-workshop",
+  "version": "0.1.0",
+  "description": "",
   "engines": {
     "node": "0.10",
     "npm": "1.3"
   },
   "dependencies": {
-    "docpad": "~6.69.2",
-    "docpad-plugin-eco": "~2.1.0",
-    "docpad-plugin-livereload": "~2.6.0",
-    "docpad-plugin-marked": "~2.3.0",
-    "marked": "^0.3.3"
   },
-  "main": "node_modules/docpad/bin/docpad-server",
+  "main": "",
   "scripts": {
-    "start": "node_modules/docpad/bin/docpad-server"
+    "start": ""
   }
 }

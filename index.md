@@ -30,6 +30,14 @@ style: |
         width:0.72em;
         height:0.72em;
         }
+    h3 {
+        font-size: 1.25em;
+        font-weight: bold;
+    }
+    .no-title h2 {
+      display: none;
+    }
+
 ---
 
 # BEM CSS Workshop {#Cover}
@@ -39,24 +47,15 @@ style: |
 ![](pictures/cover.jpg)
 <!-- photo by John Carey, fiftyfootshadows.net -->
 
-##Is this good?
+## [git.io/css-old-school](http://git.io/css-old-school)
 
-    H1 { color: blue }
-    P EM { font-weight: bold }
-    A:link IMG { border: 2px solid blue }
-    A:visited IMG { border: 2px solid red }
-    A:active IMG { border: 2px solid lime }
+### Little frontend exersise
 
-<!--
-Now look at this code. Do you see something strange? Any guess?
-Who would write their CSS like this?
-
-The problem is that CSS was created to make text bold and links underlined. It ideally suited
-solving these problems. In many websites developers still use CSS like.
-
-Actually this code from [CSS level 1 specification](http://www.w3.org/TR/CSS1/). It is
-very simple, was recommended in 1996. Time passed and we met new chalenges.
--->
+* …Make another menu in the sidebar
+* …This second menu should have different color scheme
+* …Place a button in the active menu item
+* …Button in the active menu should be smaller
+* …Use smaller buttons in the main column too
 
 ## What makes CSS hard?
 
@@ -94,6 +93,65 @@ The real hard problems of CSS are here:
 - Dependency management
 - Removing unused code
 -->
+
+## Where CSS is hard?
+{: .no-title .hard-css }
+
+<table><thead>
+
+<th markdown="1">
+
+This is not hard in CSS
+
+</th>
+
+<th markdown="1">
+
+This is!
+
+</th>
+
+</thead><tr>
+
+<td markdown="1">
+
+    #sidebar ul li a {
+      <mark>color: red;</mark>
+      <mark>display: block;</mark>
+      <mark>padding: 1em;</mark>
+    }
+
+</td>
+
+<td markdown="1">
+
+    <mark>#sidebar ul li a</mark> {
+      color: red;
+      display: block;
+      padding: 1em;
+    }
+
+</td>
+
+</tr></table>
+
+*How do we architect encapsulated components?*
+{: .next }
+
+<!--
+Writing CSS is easy. It is very easy to read and it is very likely that you can
+find the tricks you need at Stackoverflow. But architechting CSS is very difficult.
+
+We need a way to architect independent encapsulated components.
+Being put into any place on the page, the components should not break anything. Also, it should not be broken
+itself.
+-->
+
+<style>
+.hard-css em {
+  font-size: 30px;
+}
+</style>
 
 ## Theory
 
@@ -322,7 +380,66 @@ The real hard problems of CSS are here:
 }
 </style>
 
+## Blocks of elements
+
+    <ul class="menu">
+        <li class="<mark>menu__item</mark>">Item 1</li>
+        <li class="<mark>menu__item</mark>">Item 2</li>
+        <li class="<mark>menu__item</mark>">Item 3</li>
+    </ul>
+
+## Nested elements
+
+    <ul class="menu">
+        <li class="<mark>menu__item</mark>">
+            <a class="<mark>menu__link</mark>">Item 1</a>
+        </li>
+        ...
+    </ul>
+
+No need in `menu__item__link`!
+
+## Modified elements
+
+    <ul class="menu">
+        <li class="menu__item">Item 1</li>
+        <li class="menu__item <mark>menu__item--current</mark>">Item 2</li>
+        <li class="menu__item">Item 3</li>
+    </ul>
+
+## [git.io/css-bem-way](http://git.io/css-bem-way)
+
+### Let's try again
+
+* …Make another menu in the sidebar
+* …This second menu should have different color scheme
+* …Place a button in the active menu item
+* …Button in the active menu should be smaller
+* …Use smaller buttons in the main column too
+
+## BEM in a nutshell
+{: .nutshell }
+
+* Not `#id` but `.class`
+* No parent selectors
+* "Namespace" for a component
+* Modifiers under the namespace
+
+### Miksi? Siksi! [getbem.com/faq/](http://getbem.com/faq/)
+
+<style>
+.nutshell h3 {
+    font-size: 2em;
+}
+</style>
+
 ## SASS syntax
+
+<table>
+
+<tr>
+
+<td markdown="1">
 
     .block
       prop: val
@@ -336,9 +453,29 @@ The real hard problems of CSS are here:
         &--mod
           prop: val
 
-<!-- TODO: Show how it results -->
+</td>
 
-## Working example
+<td markdown="1">
+
+    .block {
+      prop: val
+    }
+
+    .block--mod {
+      prop: val
+    }
+
+    .block__elem {
+      prop: val
+    }
+
+    .block__elem--mod {
+      prop: val
+    }
+
+</td>
+
+</tr></table>
 
 ## MindBEMding :-)
 
@@ -354,8 +491,116 @@ The real hard problems of CSS are here:
 
 ## File structure
 
+    components/
+      header.sass
+      footer.sass
+      menu.sass
+      ...
+
 ## Multilingual structure
 
-## Logic
+    components/
+      header/
+        header.ctrl.js
+        header.dir.js
+        header.html
+        header.sass
+      footer/
+      ...
 
-## Libraries
+## Multilingual structure
+
+    logo/
+      logo.sass
+      logo.svg
+    auth-form/
+      auth-form.sass
+      auth-form__background.gif
+      auth-form.ctrl.js
+
+## Once library for many sites
+{: .one-lib }
+
+<div class="library">
+    <i class="fa fa-list"></i>
+    <i class="fa fa-users"></i>
+    <i class="fa fa-bar-chart"></i>
+    <i class="fa fa-cog"></i>
+    <i class="fa fa-film"></i>
+    <i class="fa fa-table"></i>
+    <i class="fa fa-newspaper-o"></i>
+</div>
+
+<div class="site">
+    <i class="fa fa-list"></i>
+    <i class="fa fa-table"></i>
+    <i class="fa fa-bar-chart"></i>
+</div>
+<div class="site">
+    <i class="fa fa-table"></i>
+    <i class="fa fa-film"></i>
+    <i class="fa fa-newspaper-o"></i>
+</div>
+<div class="site">
+    <i class="fa fa-bar-chart"></i>
+    <i class="fa fa-film"></i>
+    <i class="fa fa-list"></i>
+</div>
+
+<style>
+.one-lib i {
+  font-style: normal;
+}
+.one-lib {
+  display: flex;
+}
+.one-lib .site {
+    background-color: lightgrey;
+    width: 200px;
+    height: 150px;
+    display: inline-block;
+    margin: 1em;
+    padding: 0.25em;
+    box-sizing: border-box;
+}
+.one-lib .site:nth-child(1) {
+    order: 1;
+}
+.one-lib .site:nth-child(2) {
+    order: 2;
+}
+.one-lib .site:nth-child(3) {
+    order: 3;
+}
+
+.one-lib .library {
+    margin: 0 auto;
+    display: block;
+    width: 250px;
+    height: 150px;
+    background-color: silver;
+    margin: 1em;
+    padding: 0.25em;
+}
+</style>
+
+## One site, many libraries
+{: .one-lib }
+
+<div class="library">
+    <i class="fa fa-list"></i>
+    <i class="fa fa-users"></i>
+</div>
+<div class="library">
+    <i class="fa fa-bar-chart"></i>
+    <i class="fa fa-cog"></i>
+</div>
+<div class="library">
+    <i class="fa fa-film"></i>
+    <i class="fa fa-table"></i>
+    <i class="fa fa-newspaper-o"></i>
+</div>
+
+## BEM CSS Worshop
+
+### [varya.me/bem-css-workshop](http://varya.me/bem-css-sorkshop/)

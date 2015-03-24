@@ -278,6 +278,49 @@ The real hard problems of CSS are here:
 }
 </style>
 
+## Element
+
+    <div class="input">
+        <input class="input__field">
+        <span class="input__keyboard"></span>
+    </div>
+
+<div class="input">
+    <input class="input__field">
+    <span class="input__keyboard"></span>
+</div>
+
+<style>
+.input {
+    display: inline-block;
+    position: relative;
+}
+.input__field {
+    background: white;
+    border: #999 1px solid;
+    font-size: 1em;
+    padding: 1em;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.input__keyboard {
+    position: absolute;
+    width: 54px;
+    height: 100%;
+    top: 0;
+    right: 10px;
+    background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNyIgaGVpZ2h0PSIxMiI+PHBhdGggb3BhY2l0eT0iLjMiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjUuNjkzIDBoLTI0LjE1M2MtMS4xMDQgMC0xLjUyNy40MjItMS41MjcgMS41Mjd2OC45NjFjMCAxLjEwNS40MjMgMS41MjcgMS41MjcgMS41MjdoMjQuMTUzYzEuMTA0IDAgMS4zMDctLjQyMiAxLjMwNy0xLjUyN3YtOC45NjFjMC0xLjEwNS0uMjAyLTEuNTI3LTEuMzA3LTEuNTI3em0tMi42NzIgMi4wNjFoMS45MzV2MS45MzRoLTEuOTM1di0xLjkzNHptLTYgMGgxLjkzNXYxLjkzNGgtMS45MzV2LTEuOTM0em0yLjkzNSAzdjEuOTM0aC0xLjkzNXYtMS45MzRoMS45MzV6bS01LjkzNS0zaDEuOTM1djEuOTM0aC0xLjkzNXYtMS45MzR6bTIuOTM1IDN2MS45MzRoLTEuOTM1di0xLjkzNGgxLjkzNXptLTUuOTM1LTNoMS45MzV2MS45MzRoLTEuOTM1di0xLjkzNHptMi45MzUgM3YxLjkzNGgtMS45MzV2LTEuOTM0aDEuOTM1em0tNS45MzUtM2gxLjkzNXYxLjkzNGgtMS45MzV2LTEuOTM0em0yLjkzNSAzdjEuOTM0aC0xLjkzNXYtMS45MzRoMS45MzV6bS01LjkzNS0zaDEuOTM1djEuOTM0aC0xLjkzNXYtMS45MzR6bS0zIDBoMS45MzV2MS45MzRoLTEuOTM1di0xLjkzNHptMCAzaDIuOTk0djEuOTM0aC0yLjk5NHYtMS45MzR6bTMuOTUgNC45MzNoLTMuOTc4di0xLjkzM2gzLjk3OHYxLjkzM3ptLjA1LTQuOTMzaDEuOTM1djEuOTM0aC0xLjkzNXYtMS45MzR6bTEzLjk1IDQuOTMzaC0xMi45NjN2LTEuOTMzaDEyLjk2M3YxLjkzM3ptLjA1LTcuOTMzaDEuOTM1djEuOTM0aC0xLjkzNXYtMS45MzR6bTQuOTUgNy45MzNoLTMuOTc4di0xLjkzM2gzLjk3OHYxLjkzM3ptLjAyOS0yLjk5OWgtMy45Nzl2LTEuOTM0aDMuOTc5djEuOTM0eiIvPjwvc3ZnPg==);
+    background-size: 54px auto;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    box-shadow: none;
+    background-color: transparent;
+    border: none;
+}
+</style>
+
 ## SASS syntax
 
     .block

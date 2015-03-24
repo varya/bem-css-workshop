@@ -30,6 +30,9 @@ style: |
         width:0.72em;
         height:0.72em;
         }
+    pre code::before {
+      display: none;
+    }
     h3 {
         font-size: 1.25em;
         font-weight: bold;
@@ -63,7 +66,6 @@ style: |
 * Equal height columns
 * Browser inconsistencies
 * Unobvious tricks
-{: .next }
 
 <!--
 Before we decide what is wrong with that peice, let's guess what is hard in CSS.
@@ -159,13 +161,15 @@ itself.
 
 ## Just a button
 
-    <button class="button">Button button</button>
-    <span class="button">Span button</span>
-    <a class="button" href="#">Link button</a>
+    <button class="<mark>button</mark>">Button button</button>
+    <span class="<mark>button</mark>">Span button</span>
+    <a class="<mark>button</mark>" href="#">Link button</a>
 
 <button class="button">Button button</button>
 <span class="button">Span button</span>
 <a class="button" href="#">Link button</a>
+
+### Code: [bit.ly/b-e-m](http://bit.ly/b-e-m)
 
 <style>
 
@@ -185,7 +189,7 @@ itself.
 ## Selected button (modifier)
 
     <button class="button">Button</button>
-    <button class="button button--selected">
+    <button class="button <mark>button--selected</mark>">
       Selected button</button>
 
 <button class="button">Button</button>
@@ -205,8 +209,8 @@ itself.
 ## Theme
 
     <button class="button">Button</button>
-    <button class="button button--brand">Brand button</button>
-    <button class="button button--brand button--selected">
+    <button class="button <mark>button--brand</mark>">Brand button</button>
+    <button class="button <mark>button--brand</mark> <mark>button--selected</mark>">
       Selected brand button</button>
 
 <button class="button">Button</button>
@@ -250,15 +254,14 @@ itself.
 
 ## State as a modifier
 
-    <button class="button">Button</button>
-    <button class="button button--process">
+    <button class="button <mark>button--process</mark>">
       Doing smth button</button>
 
 <button class="button">Button</button>
 <button class="button button--process">Doing smth button</button>
 
     $element.toggleClass('button--process')
-      // $element.toggleMod('process')
+      // Sugar: $element.toggleMod('process')
 
 <style>
 
@@ -310,7 +313,7 @@ itself.
     Doing smth brand button</button>
 
 <button class="button button--night button--process">
-    Doing smth brand button</button>
+    Doing smth night button</button>
 
 <style>
 
@@ -340,8 +343,8 @@ itself.
 ## Element
 
     <div class="input">
-        <input class="input__field">
-        <span class="input__keyboard"></span>
+        <input class="<mark>input__field</mark>">
+        <span class="<mark>input__keyboard</mark>"></span>
     </div>
 
 <div class="input">
@@ -397,7 +400,7 @@ itself.
         ...
     </ul>
 
-No need in `menu__item__link`!
+###No need in `menu__item__link`!
 
 ## Modified elements
 
@@ -433,7 +436,8 @@ No need in `menu__item__link`!
 }
 </style>
 
-## SASS syntax
+## SASS syntax (or LESS)
+{: .sass }
 
 <table>
 
@@ -444,11 +448,14 @@ No need in `menu__item__link`!
     .block
       prop: val
 
+
       &--mod
         prop: val
 
+
       &__elem
         prop: val
+
 
         &--mod
           prop: val
@@ -477,17 +484,21 @@ No need in `menu__item__link`!
 
 </tr></table>
 
+<style>
+.sass pre code {
+    line-height: 1em;
+}
+</style>
+
 ## MindBEMding :-)
 
-    $text__family-sans: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    $text__family-sans: "Proxima Nova", Helvetica, sans-serif;
     $text__size--beta: 30;
     $text__line--beta: 36;
 
     $text__colour--base: $color__neutral--dark;
     $text__colour--alpha: $color__primary;
     $text__colour--beta: $color__primary;
-
-## Scalability
 
 ## File structure
 

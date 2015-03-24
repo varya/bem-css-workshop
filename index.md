@@ -39,6 +39,62 @@ style: |
 ![](pictures/cover.jpg)
 <!-- photo by John Carey, fiftyfootshadows.net -->
 
+##Is this good?
+
+    H1 { color: blue }
+    P EM { font-weight: bold }
+    A:link IMG { border: 2px solid blue }
+    A:visited IMG { border: 2px solid red }
+    A:active IMG { border: 2px solid lime }
+
+<!--
+Now look at this code. Do you see something strange? Any guess?
+Who would write their CSS like this?
+
+The problem is that CSS was created to make text bold and links underlined. It ideally suited
+solving these problems. In many websites developers still use CSS like.
+
+Actually this code from [CSS level 1 specification](http://www.w3.org/TR/CSS1/). It is
+very simple, was recommended in 1996. Time passed and we met new chalenges.
+-->
+
+## What makes CSS hard?
+
+* Vertical centering
+* Equal height columns
+* Browser inconsistencies
+* Unobvious tricks
+{: .next }
+
+<!--
+Before we decide what is wrong with that peice, let's guess what is hard in CSS.
+
+When ppl are asked, the repson is usually
+- vertical centing
+- making columns of equial height
+- browers render CSS differently, so it takes special knowledge and work to make the interface consistent
+- many solutions are unobvious tricks which needed to be memorized
+
+But this is not true, this is easy or at least clear how to manage. You can google for all this questions.
+-->
+
+## What <b>really</b> makes CSS hard?
+
+* Scoping
+* Specificity conflicts
+* Non-deterministic matches
+* Dependency management
+* Removing unused code
+
+<!--
+The real hard problems of CSS are here:
+- No scoping. Everything is CSS is global.
+- Specificity conflicts. I'll explain in detal later.
+- Non-deterministic matches which naturally result from declarativeness of CSS language
+- Dependency management
+- Removing unused code
+-->
+
 ## Theory
 
     .BLOCK{__ELEMENT[--MODIFIER]}

@@ -199,6 +199,9 @@ The real hard problems of CSS are here:
 <button class="button">Button</button>
 <button class="button button--process">Doing smth button</button>
 
+    $element.toggleClass('button--process')
+      // $element.toggleMod('process')
+
 <style>
 
 @keyframes processMove {
@@ -239,8 +242,6 @@ The real hard problems of CSS are here:
 }
 
 </style>
-
-    $element.toggleClass('button--process')
 
 ## Combine modifiers
 

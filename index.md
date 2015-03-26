@@ -700,7 +700,7 @@ itself.
 
 </style>
 
-## BEM CSS Worshop
+## BEM CSS Workshop
 
 ### [varya.me/bem-css-workshop](http://varya.me/bem-css-sorkshop/)
 {: .middle }

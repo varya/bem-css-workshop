@@ -614,4 +614,4 @@ itself.
 
 ## BEM CSS Worshop
 
-### [varya.me/bem-css-workshop](http://varya.me/bem-css-sorkshop/)
+### [varya.me/bem-css-workshop](http://varya.me/bem-css-workshop/)

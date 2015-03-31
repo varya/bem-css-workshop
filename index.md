@@ -702,5 +702,5 @@ itself.
 
 ## BEM CSS Workshop
 
-### [varya.me/bem-css-workshop](http://varya.me/bem-css-sorkshop/)
+### [varya.me/bem-css-workshop](http://varya.me/bem-css-workshop/)
 {: .middle }
